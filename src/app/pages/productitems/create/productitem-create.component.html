@@ -1,0 +1,38 @@
+<form [formGroup]="productItemForm" (ngSubmit)="onSave()">
+    <div class="card">
+        <div class="card-header">
+            <h4>Creación de Producto</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label" for="">Producto</label>
+                <select name="" id="productid" formControlName="productid" class="form-control" 
+                [ngClass]="{'invalid-input': productItemForm.get('productid')?.invalid && productItemForm.get('productid')?.touched}"
+                >
+                    <option value="0">Seleccione</option>
+                    <option *ngFor="let pro of productList" [value]="pro.id">{{pro.name}}</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Fecha Compra</label>
+                <input type="date" id="fechacompra" formControlName="fechacompra" class="form-control" 
+                [ngClass]="{'invalid-input': productItemForm.get('fechacompra')?.invalid && productItemForm.get('fechacompra')?.touched}"
+                >
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Precio Compra</label>
+                <input type="number" id="preciocompra" formControlName="preciocompra" class="form-control" 
+                [ngClass]="{'invalid-input': productItemForm.get('preciocompra')?.invalid && productItemForm.get('preciocompra')?.touched}"
+                >
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="">Precio Venta</label>
+                <input type="number" id="precioventa" formControlName="precioventa" class="form-control" 
+                [ngClass]="{'invalid-input': productItemForm.get('precioventa')?.invalid && productItemForm.get('precioventa')?.touched}"
+                >
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </div>
+</form>

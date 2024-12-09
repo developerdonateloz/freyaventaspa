@@ -1,0 +1,40 @@
+<form [formGroup]="productForm" (ngSubmit)="onSave()">
+    <div class="card">
+        <div class="card-header">
+            <h4>Creación de Producto</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label" for="">Nombre</label>
+                <input type="text" id="name" formControlName="name" class="form-control" 
+                [ngClass]="{'invalid-input': productForm.get('name')?.invalid && productForm.get('name')?.touched}"
+                >
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Categoría</label>
+                <select name="" id="categoryid" formControlName="categoryid" class="form-control"
+                [ngClass]="{'invalid-input': productForm.get('categoryid')?.invalid && productForm.get('categoryid')?.touched}">
+                    <option value="0">Seleccione</option>
+                    <option *ngFor="let cat of listCategories" [value]="cat.id">{{cat.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Color</label>
+                <select name="" id="colorid" formControlName="colorid" class="form-control"
+                [ngClass]="{'invalid-input': productForm.get('colorid')?.invalid && productForm.get('colorid')?.touched}">
+                    <option value="0">Seleccione</option>
+                    <option *ngFor="let cat of listColors" [value]="cat.id">{{cat.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Tamaño</label>
+                <select name="" id="sizeid" formControlName="sizeid" class="form-control"
+                [ngClass]="{'invalid-input': productForm.get('sizeid')?.invalid && productForm.get('sizeid')?.touched}">
+                    <option value="0">Seleccione</option>
+                    <option *ngFor="let cat of listSizez" [value]="cat.id">{{cat.name}}</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+<form [formGroup]="colorForm" (ngSubmit)="onSave()">
+    <div class="card">
+        <div class="card-header">
+            <h4>Creación de Color</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label" for="name">Nombre</label>
+                <input class="form-control" id="name" formControlName="name" type="text" [ngClass]="{'invalid-input': colorForm.get('name')?.invalid && colorForm.get('name')?.touched}">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="colorForm.invalid">Guardar</button>
+            <button type="button" class="btn">Cancelar</button>
+            <input type="text" #test>
+            <button type="button" (click)="epaleTest(test.value)">Testear</button>
+            <label for="">{{testWord}}</label>
+        </div>
+    </div>
+    
+</form>

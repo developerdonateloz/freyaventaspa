@@ -1,0 +1,16 @@
+<form [formGroup]="productCategoryEditForm" (submit)="onSave()">
+    <div class="card">
+        <div class="card-header">
+            <h4>Edición Categoría</h4>
+        </div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="name" class="form-label"></label>
+                <input type="text" class="form-control" id="name" formControlName="name">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success" [disabled]="productCategoryEditForm.invalid">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</form>

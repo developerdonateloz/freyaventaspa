@@ -1,0 +1,24 @@
+<h4>Categorías</h4>
+
+<div class="jumbotron text-center">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listCategories">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <button class="btn btn-warning" [routerLink]="['edit',item.id]">Editar</button>
+                    <button class="btn btn-danger" [swal]="{title:'Confirmación',text:'¿estás seguro que deseas eliminar esta categoría?',showCancelButton:true}" (confirm)="eliminar(item.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-info" [routerLink]="['create']" >Nueva Categoría</button>
+</div>
