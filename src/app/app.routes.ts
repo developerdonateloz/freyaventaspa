@@ -11,8 +11,16 @@ import { ColorCreateComponent } from './pages/colors/create/color-create.compone
 import { SizeCreateComponent } from './pages/sizes/create/size-create.component';
 import { ProductitemsComponent } from './pages/productitems/list/productitems.component';
 import { ProductitemCreateComponent } from './pages/productitems/create/productitem-create.component';
+import { LoginComponent } from './authentication/login.component';
+import { ErrorComponent } from './componentes/error.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
+  {
+    path:'',
+    component:HomeComponent,
+  },
   {
     path: 'productcategories',
     component: ProductcategoriesComponent,
@@ -72,5 +80,14 @@ export const routes: Routes = [
     path:'productitems/create',
     component:ProductitemCreateComponent,
     title:'Creación de Item'
+  },
+  {
+    path:'login',
+    component:LoginComponent,
+    title:'Login'
+  },
+  {
+    path:'**',
+    component:ErrorComponent,
   }
 ];
